@@ -5,6 +5,11 @@ from optimizer import find_best_team
 app = Flask(__name__)
 CORS(app)  # Allow requests from any origin
 
+
+@app.route('/')
+def home():
+    return jsonify({"success": True, "message": "Welcome to the Football Team Optimizer API!"}), 200
+
 @app.route('/api/optimize', methods=['POST'])
 def optimize():
     
